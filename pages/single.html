@@ -1,0 +1,62 @@
+
+<%- include('partials/header.html') %>
+
+<section class="noticia">
+    <div class="center">
+        <div class="noticia-single">
+            <h1><%= noticia.titulo %></h1>
+            <div class="autor-nome">
+                <span>Por <%= noticia.autor %></span>
+            </div><!--autor-nome-->
+
+            <div><img style="max-width: 100%;" src="<%= noticia.imagem %>"/></div>
+            <br/>
+            <%- noticia.conteudo %>
+        </div><!--noticia-single-->
+
+        <div class="mais-lidas-single">
+            <div class="mais-lidas">
+                <h3>As mais lidas</h3>
+                <div style="height: auto;" class="mais-lidas-noticias">
+                    <div class="mais-lida-noticia-single">
+                        <div style="text-align: center;"><img src="/public/images/NATUREZA1.png"/></div>
+                        <div class="texto-mais-lida-single">
+                            <h5>NATUREZA</h5>
+                            <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                            <a href="">Leia Mais</a>
+                        </div><!--texto-mais-lida-single-->
+                    </div><!--mais-lida-noticia-single-->
+
+                    <div class="mais-lida-noticia-single">
+                        <div style="text-align: center;"><img src="/public/images/NATUREZA1.png"/></div>
+                        <div class="texto-mais-lida-single">
+                            <h5>NATUREZA</h5>
+                            <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                            <a href="">Leia Mais</a>
+                        </div><!--texto-mais-lida-single-->
+                    </div><!--mais-lida-noticia-single-->
+
+                    <div class="mais-lida-noticia-single">
+                        <div style="text-align: center;"><img src="/public/images/NATUREZA1.png"/></div>
+                        <div class="texto-mais-lida-single">
+                            <h5>NATUREZA</h5>
+                            <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                            <a href="">Leia Mais</a>
+                        </div><!--texto-mais-lida-single-->
+                    </div><!--mais-lida-noticia-single-->
+
+                    <div class="mais-lida-noticia-single">
+                        <div style="text-align: center;"><img src="/public/images/NATUREZA1.png"/></div>
+                        <div class="texto-mais-lida-single">
+                            <h5>NATUREZA</h5>
+                            <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                            <a href="">Leia Mais</a>
+                        </div><!--texto-mais-lida-single-->
+                    </div><!--mais-lida-noticia-single-->
+                </div><!--mais-lidas-noticias-->
+            </div><!--mais-lidas-->
+        </div><!--mais-lidas-single-->
+    </div><!--center-->
+</section><!--noticia-->
+
+<%- include('partials/footer.html') %>

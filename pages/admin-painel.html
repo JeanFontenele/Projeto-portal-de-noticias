@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel administrativo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/style.css"/>
+    <style>
+        body {  
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Painel Administrativo</h1>
+
+        <div class="panel-wrapper">
+            <!-- Formulário de Cadastro de Notícia -->
+            <div class="box">
+                <h2 class="box-title">Cadastro Noticia</h2>
+
+                <form enctype="multipart/form-data" method="post" id="form-noticia" action="/admin/cadastro">
+                    <div class="form-group">
+                        <label for="titulo">Título</label>
+                        <input 
+                            type="text" 
+                            name="titulo_noticia" 
+                            class="form-panel"
+                            id="titulo" 
+                            placeholder="Digite o título da notícia"
+                           
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="autor">Url imagem</label>
+                        <input 
+                            type="text" 
+                            name="url_imagem" 
+                            class="form-panel"
+                            id="autor" 
+                            placeholder="Digite o nome do autor"
+                           
+                        />
+                        <label for="slug">Slug</label>
+                        <input class="form-panel" id="slug" type="text" name="slug" placeholder="slug" />
+                    </div>  
+
+                    <div class="form-group">
+                        <label for="conteudo">Imagem</label>
+                        <input
+                            type="file"
+                            name="arquivo" 
+                            class="form-panel"
+                            placeholder="Selecione uma imagem"
+                            
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conteudo">Conteúdo</label>
+                        <textarea 
+                            name="noticia" 
+                            class="form-panel"
+                            id="conteudo" 
+                            placeholder="Digite o conteúdo da notícia"
+                          
+                        ></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <input type="submit" value="Cadastrar" name="cadastrar" />
+                    </div>
+                </form>
+            </div>
+
+            <!-- Lista de Notícias -->
+            <div class="box">
+                <h2 class="box-title">Listando Noticias</h2>
+
+                <ul class="news-list" id="news-list">
+                    <% for(let i = 0; i < posts.length; i++){ %>
+
+                        <li class="news-item">
+                            <div class="news-content">
+                                <div class="news-title"><%= posts[i].titulo %></div>
+                            </div>
+                            <a class="news-delete" href="/admin/deletar/<%= posts[i].id %>">x</a>
+                        </li> 
+
+                    <% } %>  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Evento de clique para deletar notícia
+        /*document.querySelectorAll('.news-delete').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const newsId = this.getAttribute('data-id');
+                console.log('Deletando notícia com ID:', newsId);
+                // Aqui você pode implementar a lógica de deleção
+                this.parentElement.remove();
+            });
+        });*/
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<%- include('partials/header.html') %>
+    
+<section class="pagina-busca">
+    <div class="center">
+        <div class="mais-lidas-single">
+            <div class="mais-lidas">
+                <h3>
+                    <% if(contagem > 1){ %> 
+                        <%= contagem %> resultados encontrados para "<%= urlPesquisada %>"
+                    <% }else{ %>
+                        <%= contagem %> resultado encontrado para "<%= urlPesquisada %>";
+                        tamanhoTela = 1;
+                    <% } %> 
+                </h3>
+                <div class="mais-lidas-noticias">
+                    <% for(let i = 0; i < posts.length; i++){ %>
+
+                        <div class="mais-lida-noticia-single">
+                            <div style="text-align: center;"><img src="<%= posts[i].imagem %>"/></div>
+                            <div class="texto-mais-lida-single">
+                                <h5><%= posts[i].titulo %></h5>
+                                <p><%- posts[i].descricaoCurta %>...</p>
+                                <a href="<%= posts[i].slug %>">Leia Mais</a>
+                            </div><!--texto-mais-lida-single-->
+                        </div><!--mais-lida-noticia-single-->
+
+                    <% } %>
+                </div><!--mais-lidas-noticias-->
+            </div><!--mais-lidas-->
+        </div><!--mais-lidas-single-->
+    </div><!--center-->
+</section><!--pagina-busca-->
+
+<%- include('partials/footer.html') %>

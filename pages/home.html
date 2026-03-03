@@ -1,0 +1,80 @@
+
+    <%- include('partials/header.html') %>
+
+    <section class="noticia-destaque">
+        <div class="center">
+            <div class="img-destaque">
+                <div class="layer"></div>
+                <div class="texto-destaque">
+                    <a href="<%= posts[0].slug %>"><h1><%= posts[0].titulo %></h1></a>
+                    <p><%- posts[0].descricaoCurta %>...</p>
+                </div><!--texto-destaque-->
+                <img src="<%= posts[0].imagem %>" alt="Quer fugir das praias de verão?"/>
+            </div><!--img-destaque-->
+        </div><!--center-->
+    </section><!--noticia-destaque-->
+
+    <section class="publicacoes">
+        <h2>Últimas publicações</h2>
+        <div class="center">
+            <div class="ultimas">
+                <% for(let i = 1; i < posts.length; i++){ %>
+
+                <div class="ultima-single">
+                    <img src="<%= posts[i].imagem %>" alt="surf"/>
+                    <div class="texto-ultima-single">
+                        <h5><%= posts[i].categoria %></h5>
+                        <h3><%= posts[i].titulo %></h3>
+                        <p><%- posts[i].descricaoCurta %>...</p>
+                    </div><!--texto-ultima-single-->
+                </div><!--ultima-single-->
+
+                <% } %>
+
+                <!--Adicionar uma layer no background image das duas box abaixo-->
+                <div style="margin: 0 20px 20px 0;" class="ultima-single-background">
+                    <div class="overlay-ultima"></div>
+                    <div class="box-wrapper">
+                        <div style="background-image:url('/public/images/arquitetura.png');" class="box-background-ultima"></div>
+                    </div>
+                    <div class="texto-single-background">
+                        <h5>ARQUITETURA</h5>
+                        <p>Veja as obras premiadas do famoso arquiteto Oscar Niemeyer que estão em exposição no Museu da Arquitetura Moderna em Milão.</p>
+                    </div><!--texto-single-background-->
+                </div><!--ultima-single-background-->
+
+                <div style="margin: 0 0 20px 0;" class="ultima-single-background">
+                    <div class="overlay-ultima"></div>
+                    <div class="box-wrapper">
+                        <div style="background-image:url('/public/images/arquitetura.png');" class="box-background-ultima"></div>
+                    </div>
+                    <div class="texto-single-background">
+                        <h5>ARQUITETURA</h5>
+                        <p>Veja as obras premiadas do famoso arquiteto Oscar Niemeyer que estão em exposição no Museu da Arquitetura Moderna em Milão.</p>
+                    </div><!--texto-single-background-->
+                </div><!--ultima-single-background-->
+            </div><!--ultimas-->
+
+            <div class="mais-lidas-single">
+                <div class="mais-lidas">
+                    <h3>As mais lidas</h3>
+                    <div class="mais-lidas-noticias">
+                        <% for(let i = 0; i < postStop.length; i++){ %>
+
+                        <div class="mais-lida-noticia-single">
+                            <div style="text-align: center;"><img src="<%= postStop[i].imagem %>"/></div>
+                            <div class="texto-mais-lida-single">
+                                <h5><%= postStop[i].categoria %></h5>
+                                <p><%- postStop[i].conteudoMaisLidas %>...  <span style="font-size:12px;font-weight:bold;display:block;">(<%= postStop[i].views %> views)</span></p>
+                                <a href="<%= postStop[i].slug %>">Leia Mais</a>
+                            </div><!--texto-mais-lida-single-->
+                        </div><!--mais-lida-noticia-single-->
+
+                        <% } %>
+                    </div><!--mais-lidas-noticias-->
+                </div><!--mais-lidas-->
+            </div><!--mais-lidas-single-->
+        </div><!--center-->
+    </section><!--publicacoes-->
+
+    <%- include('partials/footer.html') %>

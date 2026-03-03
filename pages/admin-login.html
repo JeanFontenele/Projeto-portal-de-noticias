@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Painel Admin</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/style.css"/>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Painel Admin</h1>
+            <p>Faça o seu login para continuar</p>
+        </div>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="usuario">Usuário</label>
+                <input 
+                    type="text" 
+                    name="usuario" 
+                    class="form-login" 
+                    placeholder="Digite seu usuário"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input 
+                    type="password" 
+                    name="senha" 
+                    class="form-login" 
+                    placeholder="Digite sua senha"
+                    required
+                />
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" name="logar">Entrar</button>
+            </div>
+        </form>
+
+        <p class="footer-text">&copy; 2026 Painel Administrativo. Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>
